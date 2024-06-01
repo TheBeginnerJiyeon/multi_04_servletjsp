@@ -1,0 +1,15 @@
+
+~
+java:S1854"6Remove this useless assignment to local variable "pw".(€×íãüÿÿÿÿ8ƒÎÁ¥ù1J$faa74618-97f7-47c7-844b-2be4224c8604
+~
+java:S1854"6Remove this useless assignment to local variable "id".(ıé µúÿÿÿÿ8í§Ú¥ù1J$1203f92e-3678-47ea-999f-cf40c4c73a04
+­
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿJ$6d9078f5-deec-4531-a2ae-45aef91fe78a
+o
+java:S1481"'Remove this unused "id" local variable.(ıé µúÿÿÿÿ8ï§Ú¥ù1J$2cb9b1ef-7703-466f-b9ce-1a51e078f6c6
+o
+java:S1481"'Remove this unused "pw" local variable.(€×íãüÿÿÿÿ8…ÎÁ¥ù1J$8289ef54-e3f6-4655-8de9-a7f69f240ea1
+f	java:S106"+Replace this use of System.out by a logger.(•¨ÂJ$f05a6dfd-3c2b-4fc9-a1b9-df60d58815f3
+›
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(äë´òùÿÿÿÿ8©õØ¥ù1J$fe948987-9f3e-4b0a-ad2b-38fbf9e3b28f
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(Ìœßñÿÿÿÿÿ8ï§Ú¥ù1J$22b024e6-0556-4c73-aaa6-f638c958f494

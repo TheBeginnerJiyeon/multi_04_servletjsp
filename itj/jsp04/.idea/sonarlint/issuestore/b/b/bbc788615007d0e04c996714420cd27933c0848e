@@ -1,0 +1,43 @@
+
+†	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(²ó¾„úÿÿÿÿJ$371ef501-fb92-4626-a5d2-8046e421a3c7
+¨
+java:S1319"gThe type of "members" should be an interface such as "List" rather than the implementation "ArrayList".(ª™ÜºÿÿÿÿÿJ$ccc67ac2-5a8e-46e6-9193-4071e010f0f1
+¬
+java:S1319Y"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(›€ƒJ$4fe9ead6-95c6-46cd-84f3-728f01f9a2e6
+}
+java:S2259”"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”ÙJ$cb4fa10f-cd4f-4c8c-8782-5242923a3e61
+|
+java:S2259’"@A "NullPointerException" could be thrown; "ps" is nullable here.(ä›ªJ$e83575d1-6fac-4abc-b246-f7ba6886797c
+‰
+java:S2095o"HUse try-with-resources or close this "Connection" in a "finally" clause.(ì‹ŠûÿÿÿÿJ$897a081e-eb69-4f37-8036-fa4a187e1d45
+‰
+java:S2095#"HUse try-with-resources or close this "Connection" in a "finally" clause.(ì‹ŠûÿÿÿÿJ$680e2f38-7969-4108-ad79-fe3d9cdb4d37
+|	java:S125	"<This block of commented-out lines of code should be removed.( õ¿ÀøÿÿÿÿJ$eadbce38-24f9-4213-9cfd-f701305d7659
+k	java:S106"+Replace this use of System.out by a logger.(©ì¦ÌıÿÿÿÿJ$b3603b8e-0d76-4fae-9597-a79a31ea7942
+|	java:S125"<This block of commented-out lines of code should be removed.(“àğûÿÿÿÿJ$9ace5077-a09f-4731-8d01-9578dd550f6b
+w
+java:S6437#"6Revoke and change this password, as it is compromised.(ì‹ŠûÿÿÿÿJ$38b33267-9598-4438-a29f-79f1cdb8ed35
+f	java:S106$"+Replace this use of System.out by a logger.(¦“‰’J$0e02ef87-f222-47b2-aa05-79520d80f02b
+p
+java:S22096"5Change this instance-reference to a static reference.(œ§¡VJ$17bff376-5fac-4bfe-bf87-fb64e6ceae97
+v
+java:S22098"5Change this instance-reference to a static reference.(ÀÃº‘øÿÿÿÿJ$47ca6b24-a640-4b35-bf12-05821afcd14b
+f	java:S106>"+Replace this use of System.out by a logger.(æ¥ûçJ$10e7432f-3127-4127-91c8-db45c9c27a43
+w	java:S125B"<This block of commented-out lines of code should be removed.(œ˜Í€J$c56a5986-c2f2-4224-ba4e-7e5e77e96ece
+s
+java:S1135H"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿJ$f15a1c1c-0fbd-40d7-9ab2-41d677ac91e5
+k	java:S106L"+Replace this use of System.err by a logger.(À­‹¿ıÿÿÿÿJ$4d164d81-c963-458a-a72e-9ea671b5a805
+s
+java:S1135R"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿJ$9a6449e7-1028-437e-ae24-a9d97968c3fb
+r
+java:S1481c"1Remove this unused "successCount" local variable.(•áõöÿÿÿÿÿJ$95e39202-3d64-4a83-a5b2-d94e0f017b5f
+k	java:S106g"+Replace this use of System.out by a logger.(©ì¦ÌıÿÿÿÿJ$610f651b-157c-4861-994c-a02f67bfd264
+|	java:S125k"<This block of commented-out lines of code should be removed.(“àğûÿÿÿÿJ$08e4d499-b9ec-475d-83a2-c3491975a24b
+w
+java:S6437o"6Revoke and change this password, as it is compromised.(ì‹ŠûÿÿÿÿJ$208a1e54-32b4-4b76-8755-458c83dcf307
+f	java:S106q"+Replace this use of System.out by a logger.(¦“‰’J$89104209-d5a6-4c06-b245-166b53630a7a
+v	java:S125}"<This block of commented-out lines of code should be removed.(˜Ğ¯LJ$20e30282-a2a6-44c0-a381-98524a6995ad
+g	java:S106Š"+Replace this use of System.out by a logger.(Û·óãJ$0f215ad1-fcca-4df8-8bcf-32bd831bdb76
+e	java:S108")Either remove or fill this block of code.(”ı¾J$ab9d7a58-4bd9-4535-add3-04b0fdf9c839
+t
+java:S1135–"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿJ$7a188c9f-d317-4804-85c6-64a65c71f3ee

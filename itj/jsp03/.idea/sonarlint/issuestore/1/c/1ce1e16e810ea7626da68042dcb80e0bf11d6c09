@@ -1,0 +1,7 @@
+
+´
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ8«êğ¤ù1J$2eea2bd4-75af-4291-902f-f637b24ec631
+m	java:S106"+Replace this use of System.out by a logger.(ÓÓ¹8¬êğ¤ù1J$27a53050-c8a8-4b16-834d-4b5824c8d4d0
+¤
+java:S1989!"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(€ÊÎ´8ˆŸô¤ù1J$9389936f-cebb-4d87-a2d2-2c6c0ea6ea39
+~	java:S125#"<This block of commented-out lines of code should be removed.(¯ÛîÚ8‚ûó¤ù1J$c404636f-08b9-4608-b761-737c5bcbacdf

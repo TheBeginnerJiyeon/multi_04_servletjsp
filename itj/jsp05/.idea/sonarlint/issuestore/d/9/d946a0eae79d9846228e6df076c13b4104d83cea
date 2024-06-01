@@ -1,0 +1,8 @@
+
+l	java:S106"+Replace this use of System.out by a logger.(Ï‹ÊR8‹è‹ïù1J$0d5866b9-20db-410f-bb83-2a6cfe7e4361
+m	java:S106"+Replace this use of System.out by a logger.(…ë£8‹è‹ïù1J$05e0ca6b-1781-4170-b942-d176ddd18438
+~	java:S125"<This block of commented-out lines of code should be removed.(çÏ„8üïù1J$0393cbbb-c093-4814-80d0-e8fc31dbeb38
+l	java:S106+"+Replace this use of System.out by a logger.(Ï‹ÊR8——šïù1J$0af17786-08e1-46d4-927f-bca42f0708d8
+m	java:S106,"+Replace this use of System.out by a logger.(…ë£8——šïù1J$c30aa2b5-71b4-4ae9-911c-739907df6f39
+˜
+java:S1989="PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8¡¨ïù1J$530cbe62-4aa3-4257-8cac-6d6287773c86

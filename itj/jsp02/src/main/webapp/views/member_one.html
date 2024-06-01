@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	background: lime;
+}
+
+* {
+	font-size: 20px;
+	text-align: center;
+}
+button {
+	background: pink;
+}
+.left {
+	/* 여러개를 선택해서 지정하고 싶을 때 클래스를 사용. 클래스 중 left에 해당하는 것만 스타일을 지정해라. */
+	/* 클래스 선택은 .클래스명 */
+	width: 100px;
+	background: blue;
+	color: white;
+}
+
+#bottom {
+	background: red;
+	color: yellow;
+}
+
+input {
+	background: greenyellow;
+}
+</style>
+</head>
+<body>
+	<h3>회원정보검색(한명)화면입니다.</h3>
+	<hr color="red">
+	<a href="../index.html">
+
+		<button id="b1">첫페이지로</button>
+	</a>
+	<a href="member.html">
+		<button id="b2">회원정보페이지</button>
+	</a>
+	<form action="../jsp/member_one.jsp">
+		<table border="1" align="center">
+			<tr>
+				<td>아이디:</td>
+				<td><input name="id" value="apple"></td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<button type="submit">회원검색(한명)요청</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

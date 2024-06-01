@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+	<resultMap type="Member" id="memberResultSet">
+			<!-- 언더바가 들어가는 쿼리문에 한하여 매핑을 해줘야함 -->
+			<id property="no" column="NO"/>
+			<result property="id" column="ID"/>
+			<result property="pw" column="PW"/>
+			<result property="name" column="NAME"/>
+			<result property="tel" column="TEL"/>
+			<result property="createDate" column="CREATE_DATE"/>
+
+	</resultMap>
+	
+<!-- 	CREATE TABLE member(
+		no INT AUTO_INCREMENT PRIMARY KEY,
+		id varchar(10) UNIQUE,
+		pw varchar(10),
+		name varchar(10),
+		tel varchar(10),
+		create_date timestamp DEFAULT CURRENT_TIMESTAMP
+	); -->
+	
+	<!-- private int no;
+	private String id;
+	private String pw;
+	private String name;
+	private String tel;
+	private Date createDate;	 -->
+	
+	
+	
+	<select id="selectMember" parameterType="java.lang.String" resultMap="memberResultSet">
+		SELECT NO, ID, PW, NAME, TEL, CREATE_DATE
+		FROM MEMBER
+		WHERE ID=#{id}
+	
+	</select>
+	
+	
+	
+	
+<!-- 	CREATE TABLE member(
+		no INT AUTO_INCREMENT PRIMARY KEY,
+		id varchar(10) UNIQUE,
+		pw varchar(10),
+		name varchar(10),
+		tel varchar(10),
+		create_date timestamp DEFAULT CURRENT_TIMESTAMP
+	); -->
+	
+	
+	
+	<select id="selectLoginMember" parameterType="Member" resultMap="memberResultSet">
+		SELECT NO, ID, PW, NAME, TEL, CREATE_DATE
+		FROM MEMBER
+		WHERE ID=#{id}
+	
+	</select>
+	
+	
+	
+	<select id="selectEncryptedPwd" parameterType="Member" resultType = "java.lang.String">
+		SELECT PW
+		FROM MEMBER
+		WHERE ID=#{id}
+	
+	</select>
+	
+	
+	<!-- 기본 디폴트가 있는 컬럼은 빼고 넣어도 됨. 여기서는 NO 와 CREATE_DATE  -->
+	<insert id="insertMember" parameterType="Member">
+        INSERT /* com.multi.shop.member.model.dao.MemberDAO.insertMember() */
+          INTO MEMBER
+        (
+          NO
+        , ID
+        , PW
+        , NAME
+        , TEL
+        , CREATE_DATE
+        )
+        VALUES
+        (
+    
+          NULL
+        , #{ id }
+        , #{ pw }
+        , #{ name }
+        , #{ tel }
+        , NOW()
+        
+        
+        
+        )
+	</insert>
+
+</mapper>

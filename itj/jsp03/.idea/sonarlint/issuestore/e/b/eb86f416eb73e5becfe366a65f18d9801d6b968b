@@ -1,0 +1,17 @@
+
+
+java:S1192"FDefine a constant instead of duplicating this literal "</h1>" 4 times.(üşÀĞıÿÿÿÿ8ÛëÖ¡ù1J$38ddb2a5-9c4f-4d21-b42b-99d67c2719ef
+m	java:S106"+Replace this use of System.out by a logger.(Æàæ8áëÖ¡ù1J$9d19f2e5-01f8-48b9-99c2-57db2af1b4b3
+r	java:S106"+Replace this use of System.out by a logger.(ôÂÉÌÿÿÿÿÿ8áëÖ¡ù1J$b258766f-f8be-4bcc-b73d-1bbbf6eb5476
+˜
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8âëÖ¡ù1J$6fc5fa34-8af0-48d0-8846-420427322a89
+m	java:S106'"+Replace this use of System.out by a logger.(èùœ´8ãëÖ¡ù1J$df12a411-ffda-4d8e-bd32-b08dd37637d2
+r	java:S106)"+Replace this use of System.out by a logger.(÷±”şÿÿÿÿ8ãëÖ¡ù1J$9b570d4e-b96f-43e3-8aa6-e5481bb14efb
+m	java:S106*"+Replace this use of System.out by a logger.(‡ÂÅĞ8ãëÖ¡ù1J$c8d6baf1-597f-48f2-a507-004be7b62fd4
+´
+java:S19892"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ8ãëÖ¡ù1J$482a8893-e65a-4aab-aaef-1240c4abb8b9
+r	java:S1066"+Replace this use of System.out by a logger.(»«Åûÿÿÿÿ8ãëÖ¡ù1J$2cfc3ad8-db59-4119-9cd1-d1ca504db4f2
+m	java:S1067"+Replace this use of System.out by a logger.(Ê½®¿8ãëÖ¡ù1J$05001276-ea5a-423f-9c6e-6085725e793b
+m	java:S106;"+Replace this use of System.out by a logger.(­á¼¿8äëÖ¡ù1J$b1a33d7b-7aa9-4a17-ac0d-9e88f899e5ae
+˜
+java:S1989C"PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8äëÖ¡ù1J$0e6e4467-4327-4ea0-861e-3ca598f86539

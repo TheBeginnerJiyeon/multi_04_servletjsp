@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 문서의 유효성 체크를 위해 필요 -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<!-- 마이바티스 설정과 관련하여 기본셋팅들을 선언할수 있는 영역 -->
+<configuration>
+
+<!-- null 데이터가 전달되었다면 빈칸이아닌 null 로 인식하라는 뜻 , 주의 : value에 null 은 반드시 대문자로 !!-->
+	<settings>
+		<setting name= "jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<typeAliases>		
+		 <typeAlias type="com.multi.shop.board.model.dto.BoardDTO" alias="Board"/>
+		 <typeAlias type="com.multi.shop.member.model.dto.MemberDTO" alias="Member"/>
+		 <typeAlias type="com.multi.shop.product.model.dto.ProductDTO" alias="Product"/>
+		 <typeAlias type="com.multi.shop.product.model.dto.CompanyDTO" alias="Company"/>
+		 <typeAlias type="com.multi.shop.product.model.dto.AttachmentDTO" alias="Attachment"/>
+		
+		
+		
+	
+	</typeAliases>
+	
+	
+	
+
+<!-- DB연결할 설정에 대한 정보를 선언하는 영역  
+		default : 연결설정을 여러 개 생성할수 있고 아이디로 구분 하는데  기본으로 연결할 설정정보를 가리키는 속성-->
+	<environments default="development">
+		<environment id="development">
+			<!-- 
+				마이바티스의 핵심이 되는 설정은 트랜잭션을 제어하기 위한 TransactionManager와 함께 
+				데이터 베이스 Connection 인스턴스를 가져오기 위한 DataSource를 포함
+				
+				* TransactionManager는 JDBC와 MANAGED 둘 중 하나를 선택할 수 있음
+				- JDBC : JDBC가 commit과 rollback의 기능을 직접 사용 가능하게 하는 옵션(수동 commit)
+						   트랜잭션의 스코프를 관리하기 위해 dataSource로 부터 커넥션을 가져온다.
+				
+				- MANAGED : 트랜잭션에 대해 어떠한 영향도 행사하지 않는다는 옵션(자동 commit)
+							컨테이너가 트랜잭션의 모든 생명주기를 관리한다. 디폴트로 커넥션을 닫아줌
+			 -->
+			 
+			 <!--<transactionManager type="JDBC"/>
+			  <dataSource type="POOLED">  한번 등록 해놓으면 캐쉬로 등록해서 다음번에도 계속 적용 -->
+		     <!--   <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+		        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		        <property name="username" value="mybatis"/>
+		        <property name="password" value="mybatis"/>
+		      </dataSource>
+		       -->
+
+		      	<transactionManager type="JDBC"/>
+			  <dataSource type="POOLED"> <!-- 한번 등록 해놓으면 캐쉬로 등록해서 다음번에도 계속 적용 -->
+		        <!-- <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+		        <property name="url" value="jdbc:mysql://localhost:3306/scott"/> -->
+		        
+		         <property name="driver" value="net.sf.log4jdbc.DriverSpy"/>
+				<property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/scott?characterEncoding=utf8"/>
+		        
+		        <!-- useUnicode=true&characterEncoding=utf8 -->
+		        
+		        <property name="username" value="scott"/>
+		        <property name="password" value="tiger"/>
+		      </dataSource>
+
+		</environment>
+	</environments>
+
+
+	<mappers>	
+		<mapper resource= "/mappers/board-mapper.xml"/>	
+		<mapper resource= "/mappers/member-mapper.xml"/>	
+		<mapper resource= "/mappers/product-mapper.xml"/>	
+	</mappers>
+
+
+
+</configuration>
+

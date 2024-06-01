@@ -1,0 +1,12 @@
+
+m	java:S106"+Replace this use of System.out by a logger.(Ö·İ“8ıœş¡ù1J$79beddfb-c2da-4753-af0a-f0b6f199fbd0
+r	java:S106"+Replace this use of System.out by a logger.(º‰ºİùÿÿÿÿ8ä»€¢ù1J$d2f3c813-da63-4d90-8f91-190c1bea77be
+l	java:S106"+Replace this use of System.out by a logger.(ÃœÄ8Í°ƒ¢ù1J$89a20488-75b7-4a18-973c-4183df2e95dd
+m	java:S106'"+Replace this use of System.out by a logger.(îöá•8Ô…¢ù1J$dbdbde74-7a2d-48f4-9e39-1543c1b28b71
+ 
+java:S2226
+"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(’¢Ò¬ÿÿÿÿÿ8Ğ«ü¡ù1J$c694361a-21dc-4285-8c92-78ea09985e77
+›
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"( ­™ù8Ğ«ü¡ù1J$372dec14-adc9-4f5b-af7c-5a05f70f4b81
+›
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‹‹ÀÒ8Ğ«ü¡ù1J$96b9361c-04aa-43cb-9de2-81dc16ffcea9

@@ -1,0 +1,6 @@
+
+r	java:S106"+Replace this use of System.out by a logger.(Њ“гфьяяяя8Џґ‚Пщ1J$1e3effec-55f9-4768-bfc4-179b88b4dad1
+”
+java:S1989"QHandle the following exception that could be thrown by "toJson": JsonIOException.(µЃбв8±эЋПщ1J$09580b15-ce6b-4ef6-b7a5-93c9b2872a10
+“
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(µЃбв8ґэЋПщ1J$8131e5ca-51f8-4322-86b4-a09eb80a6f60

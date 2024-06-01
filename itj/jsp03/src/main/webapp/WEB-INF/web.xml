@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+  <display-name>jsp03</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+
+  <!--web.xml 파일 - 배포서술자(DD, Deployment Descriptor)라고 해서 웹 애플리케이션의 기본적인 설정을 위해
+    작성하는 파일-->
+
+  <servlet>
+
+    <servlet-name>xmlmapping</servlet-name>
+    <servlet-class>com.multi.servlet.b_lifecycle.LifeCycleTestXml</servlet-class>
+    <load-on-startup>0</load-on-startup> <!--숫자가 작아질 수록 우선순위가 커진다-->
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>xmlmapping</servlet-name>
+    <url-pattern>/xmllifecycle</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>hi2</servlet-name>
+    <servlet-class>com.multi.servlet.b_lifecycle.Hi2</servlet-class>
+    <init-param>
+      <param-name>tel</param-name>
+      <param-value>0104445555</param-value>
+    </init-param>
+    <init-param>
+      <param-name>email</param-name>
+      <param-value>a@naver.com</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hi2</servlet-name>
+    <url-pattern>/hi2</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>monday</servlet-name>
+    <servlet-class>com.multi.servlet.e_practice.Monday</servlet-class>
+    <init-param>
+      <param-name>temp</param-name>
+      <param-value>good</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>monday</servlet-name>
+    <url-pattern>/monday2.do</url-pattern>
+  </servlet-mapping>
+
+
+
+</web-app>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boardMapper">
+	<resultMap type="Board" id="boardResultSet">
+			<!-- 언더바가 들어가는 쿼리문에 한하여 매핑을 해줘야함 -->
+			<id property="no" column="NO"/>
+			<result property="categoryCode" column="CATEGORY_CODE"/>
+			<result property="title" column="TITLE"/>
+			<result property="content" column="CONTENT"/>
+			<result property="count" column="COUNT"/>
+			<result property="createDate" column="CREATED_DATE"/>
+			<result property="status" column="STATUS"/>
+			<result property="writer" column="WRITER"/>
+
+	</resultMap>
+	
+	<resultMap type="com.multi.shop.board.model.dto.CategoryDTO" id="categoryResultMap">
+		<id property="code" column="C_CODE"/>
+		<result property="name" column="C_NAME"/>
+	</resultMap>
+	<select id="getListCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE STATUS='Y'
+	</select>
+	
+	<select id="selectList" resultMap="boardResultSet">
+		SELECT NO, CATEGORY_CODE, TITLE, CONTENT, WRITER , CREATED_DATE , COUNT
+		FROM BOARD 
+		ORDER BY NO DESC
+	</select>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="boardResultSet">
+		SELECT A.NO, A.CATEGORY_CODE, A.TITLE, A.CONTENT, A.WRITER , A.CREATED_DATE ,A.COUNT
+		FROM BOARD A
+		JOIN MEMBER B ON(WRITER=ID)
+		WHERE A.STATUS='Y' AND A.NO=#{no}
+	
+	</select>
+	
+	<update id="updateCount" parameterType="_int">
+		UPDATE BOARD
+		SET COUNT = COUNT+1
+		WHERE NO=#{no}
+	</update>
+	
+	
+	<update id="updateBoard">
+		UPDATE BOARD
+		SET CATEGORY_CODE=#{ categoryCode },
+		TITLE = #{ title },
+		CONTENT = #{ content }
+		WHERE NO=#{no}
+	</update>
+	
+	<insert id="insertBoard">
+        INSERT /* com.multi.shop.board.model.dao.BoardDAO.insertBoard() */
+          INTO BOARD 
+        (
+          CATEGORY_CODE
+        , TITLE
+        , CONTENT
+        , WRITER
+        )
+        VALUES
+        (
+    
+          #{ categoryCode }
+        , #{ title }
+        , #{ content }
+        , #{ writer }
+        )
+	</insert>
+	
+	
+	
+	<delete id="deleteBoard" parameterType="_int">
+		DELETE FROM BOARD
+		WHERE NO=#{no}
+	</delete>
+	
+	
+
+</mapper>

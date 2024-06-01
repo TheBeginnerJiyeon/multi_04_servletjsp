@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="productMapper">
+
+
+			<!-- 1-1. resultMap의 하위 엘리먼트 -->
+			<!-- 
+				<id> : primary key 컬럼을 매핑하기 위한 태그이다. (성능 향상)
+				<result> : pk가 아닌 일반 컬럼에 매핑하기 위한 태그이다.
+				<constructor> : 인스턴스화 되는 클래스의 생성자에 결과를 삽입하기 위해 사용한다. <idArg>, <arg> 하위 엘리먼트가 있다.
+				<association> : 복잡한 타입의 연관관계로 1:1 포함관계인 경우 사용한다.
+				<collection> : 복잡한 타입의 연관관계로 1:다 포함관계인 경우 사용한다.
+				<discriminator> : 조건에 따라 다른 resultMap이 매핑되도록 한다. 잘사용하지않음
+			-->
+
+
+	<resultMap type="Product" id="productResultSet">
+			<!-- 언더바가 들어가는 쿼리문에 한하여 매핑을 해줘야함 -->
+			<id property="id" column="ID"/>
+			<result property="name" column="NAME"/>
+			<result property="content" column="CONTENT"/>
+			<result property="price" column="PRICE"/>
+			
+			<!-- <result property="companyId" column="COMPANY_ID"/> -->
+			
+			<result property="img" column="IMG"/>
+			<result property="createdDate" column="CREATED_DATE"/>
+			<result property="createdPerson" column="CREATED_PERSON"/>
+			<result property="modifiedDate" column="MODIFIED_DATE"/>
+			<result property="modifiedPerson" column="MODIFIED_PERSON"/>
+			<result property="status" column="STATUS"/>
+			
+			<association property="company" resultMap="companyResultSet"/>
+			
+			 <collection property="attachments" resultMap="attachmentResultMap"/>
+			
+
+	</resultMap>
+	
+	
+	<!-- <resultMap type="com.multi.shop.product.model.dto.CompanyDTO" id="companyResultSet">
+			<id property="id" column="ID"/>
+			<result property="name" column="COMPANYNAME"/>
+			<result property="addr" column="ADDR"/>
+			<result property="tel" column="TEL"/>
+		</resultMap> -->
+	
+	<resultMap type="Company" id="companyResultSet">
+			<!-- 언더바가 들어가는 쿼리문에 한하여 매핑을 해줘야함 -->
+			<id property="id" column="COMPANYID"/>
+			<result property="name" column="COMPANYNAME"/>
+			<result property="addr" column="ADDR"/>
+			<result property="tel" column="TEL"/>
+	</resultMap>
+	
+	
+	<!-- private int no;
+    private int refProductNo;
+    private String originalName;
+    private String savedName;
+    private String savePath;
+    private String thumbnailPath;
+    private String status;
+    private Date createDate;
+    private String createPerson;
+    private Date modifyDate;
+    private String modifyPerson; -->
+	
+	
+	<resultMap type="Attachment" id="attachmentResultSet">
+			
+			<id property="no" column="ATTACHMENT_NO"/>
+			<result property="refProductNo" column="REF_PRODUCT_NO"/>
+			<result property="originalName" column="ORIGINAL_NAME"/>
+			<result property="savedName" column="SAVED_NAME"/>
+			<result property="savePath" column="SAVE_PATH"/>
+			<result property="thumbnailPath" column="THUMBNAIL_PATH"/>
+			<result property="status" column="STATUS"/>
+			<result property="createDate" column="CREATED_DATE"/>
+			<result property="createPerson" column="CREATED_PERSON"/>
+			<result property="modifyDate" column="MODIFIED_DATE"/>
+			<result property="modifyPerson" column="MODIFIED_PERSON"/>
+	</resultMap>
+	
+	
+	<!-- private int no;
+    private int refProductNo;
+    private String originalName;
+    private String savedName;
+    private String savePath;
+    private String thumbnailPath;
+    private String status;
+    private Date createDate;
+    private String createPerson;
+    private Date modifyDate;
+    private String modifyPerson; -->
+	
+	
+	<!-- CREATE TABLE ATTACHMENT (
+  ATTACHMENT_NO INT PRIMARY KEY AUTO_INCREMENT,
+  REF_PRODUCT_NO INT NOT NULL,
+  ORIGINAL_NAME VARCHAR(255) NOT NULL,
+  SAVED_NAME VARCHAR(255) NOT NULL,
+  SAVE_PATH VARCHAR(1000) NOT NULL,
+  THUMBNAIL_PATH VARCHAR(255),
+  STATUS VARCHAR(1) DEFAULT 'Y',
+  CREATED_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,
+  CREATED_PERSON VARCHAR (100),
+  MODIFIED_DATE DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  MODIFIED_PERSON VARCHAR (100),
+  FOREIGN KEY (REF_PRODUCT_NO) REFERENCES PRODUCT(ID)  
+); -->
+	
+	
+	<!-- <resultMap type="attachmentResultMap" id="attachmentResultSet">
+			언더바가 들어가는 쿼리문에 한하여 매핑을 해줘야함
+			<id property="no" column="ATTACHMENT_NO"/>
+			<result property="refProductNo" column="REF_PRODUCT_NO"/>
+			<result property="originalName" column="ORIGINAL_NAME"/>
+			<result property="savedName" column="SAVED_NAME"/>
+			<result property="savedPath" column="SAVE_PATH"/>
+			<result property="thumbnailPath" column="THUMBNAIL_PATH"/>
+			<result property="status" column="STATUS"/>
+			<result property="createDate" column="CREATED_DATE"/>
+			<result property="createPerson" column="CREATED_PERSON"/>
+			<result property="modifyDate" column="MODIFIED_DATE"/>
+			<result property="modifyPerson" column="MODIFIED_PERSON"/>
+	</resultMap> -->
+	
+	
+	<resultMap id="attachmentResultMap" type="com.multi.shop.product.model.dto.AttachmentDTO">
+		    <id property="no" column="ATTACHMENT_NO"/>
+		    <result property="refProductNo" column="REF_PRODUCT_NO"/>
+		    <result property="originalName" column="ORIGINAL_NAME"/>
+		    <result property="savedName" column="SAVED_NAME"/>
+		    <result property="savePath" column="SAVE_PATH"/>
+		    <result property="thumbnailPath" column="THUMBNAIL_PATH"/>
+		    <result property="createDate" column="CREATE_DATE"/>
+		    <result property="createPerson" column="CREATE_PERSON"/>
+		    <result property="modifyDate" column="MODIFY_DATE"/>
+		    <result property="modifyPerson" column="MODIFY_PERSON"/>
+		</resultMap>
+	
+	
+	<select id="selectList" resultMap="productResultSet">
+		SELECT A.*, B.ID COMPANYID, B.NAME COMPANYNAME /*B.NAME 같아서 주의  COMPANYNAME*/
+		FROM PRODUCT A
+		JOIN  COMPANY B ON A.COMPANY_ID = B.ID
+		
+		ORDER BY A.ID DESC
+	</select>
+	
+	
+	<select id="selectSearchList" resultMap="productResultSet">
+		
+		SELECT 
+        A.ID,
+        A.NAME,
+        A.PRICE,
+        A.COMPANY_ID,
+        A.CREATED_DATE,
+        A.CREATED_PERSON,
+        B.ID COMPANYID, 
+        B.NAME COMPANYNAME
+    FROM 
+        PRODUCT A
+    JOIN  COMPANY B ON A.COMPANY_ID = B.ID
+    WHERE
+        1 = 1
+        <if test="id != null and id!=0">
+            AND A.ID = #{id}
+        </if>
+        <if test="name != null and name != ''">
+            AND A.NAME LIKE CONCAT('%', #{name}, '%')
+        </if>
+        <if test="price != null and price!=0">
+            AND A.PRICE = #{price}
+        </if>
+ 
+        AND A.COMPANY_ID = #{company.id}
+
+    
+    ORDER BY 
+        A.ID DESC
+		
+		
+		
+	</select>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="selectProduct" parameterType="_int" resultMap="productResultSet">
+		  SELECT /*B.NAME 같아서 주의  COMPANYNAME*/
+		        A.ID,
+		        A.NAME,
+		        A.CONTENT,
+		        A.PRICE,
+		        A.IMG,
+		        A.CREATED_DATE,
+		        A.CREATED_PERSON,
+		        A.MODIFIED_DATE,
+		        A.MODIFIED_PERSON,
+		        A.STATUS,
+		        B.ID COMPANYID,
+		        B.NAME COMPANYNAME,
+		        B.ADDR,
+		        B.TEL
+             , C.ORIGINAL_NAME
+             , C.SAVED_NAME
+             , C.SAVE_PATH
+             , C.THUMBNAIL_PATH
+          FROM PRODUCT A
+          JOIN COMPANY B ON A.COMPANY_ID = B.ID
+          LEFT JOIN ATTACHMENT C ON (A.ID = C.REF_PRODUCT_NO)
+         WHERE A.STATUS = 'Y'
+           AND A.ID = #{ id }
+	
+	</select>
+	
+	
+	<select id="selectAttachment" parameterType="_int" resultMap="attachmentResultSet">
+		  SELECT * 		       
+          FROM ATTACHMENT
+       	  WHERE REF_PRODUCT_NO  = #{ productId }
+	
+	</select>
+	
+	
+	
+	
+	
+	
+<!-- 	ProductDTO newProduct = new ProductDTO();
+				newProduct.setName(name);
+				newProduct.setContent(content);
+				newProduct.setPrice(price);
+				newProduct.setModifiedPerson(modifiedPerson);
+				newProduct.setId(productId);
+
+				
+				CompanyDTO company = new CompanyDTO();
+
+				company.setId(companyId);
+
+				newProduct.setCompany(company); -->
+
+	
+	<update id="updateProduct">
+		UPDATE PRODUCT
+		SET NAME=#{ name },
+		CONTENT = #{ content },
+		PRICE = #{ price },
+		MODIFIED_PERSON = #{ modifiedPerson },
+		COMPANY_ID = #{ company.id }
+		WHERE ID=#{id}
+	</update>
+	
+	<!-- for (int i = 0; i < fileList.size(); i++) {
+		Map<String, String> file = fileList.get(i);
+
+		AttachmentDTO tempFileInfo = new AttachmentDTO();
+		tempFileInfo.setOriginalName(file.get("originFileName"));
+		tempFileInfo.setSavedName(file.get("savedFileName"));
+		tempFileInfo.setSavePath(file.get("savePath"));
+		tempFileInfo.setThumbnailPath(file.get("thumbnailPath"));
+		tempFileInfo.setModifyPerson(modifiedPerson);
+		tempFileInfo.setRefProductNo(productId);
+
+		list.add(tempFileInfo);
+	} -->
+				
+	
+	<update id="updateAttachment">
+		UPDATE ATTACHMENT
+		SET ORIGINAL_NAME=#{ originalName },
+		SAVED_NAME = #{ savedName },
+		SAVE_PATH = #{ savePath },
+		THUMBNAIL_PATH = #{ thumbnailPath },
+		MODIFIED_PERSON = #{ modifyPerson },
+		REF_PRODUCT_NO = #{ refProductNo }
+		WHERE ATTACHMENT_NO=#{no}
+	</update>
+	
+	
+	
+	<select id="selectCompanyList" resultMap="companyResultSet">
+		SELECT A.ID COMPANYID , A.NAME COMPANYNAME , A.ADDR , A.TEL  /*B.NAME 같아서 주의  COMPANYNAME*/
+		FROM COMPANY A
+		ORDER BY COMPANYID ASC
+	</select>
+	
+	
+	<insert id="insertAttachment">
+        INSERT /**/
+          INTO ATTACHMENT 
+        (
+        
+       	REF_PRODUCT_NO
+        , ORIGINAL_NAME
+        , SAVED_NAME
+        , SAVE_PATH
+        , THUMBNAIL_PATH
+        , CREATED_PERSON
+        )
+        VALUES 
+        (
+         
+       #{ refProductNo }
+        , #{ originalName }
+        , #{ savedName }
+        , #{ savePath }
+        , #{ thumbnailPath }
+        , #{ createPerson}
+        )
+	</insert>
+	
+	
+	<!-- List<AttachmentDTO> list = newProduct.getAttachments();
+	for (int i = 0; i < fileList.size(); i++) {
+		Map<String, String> file = fileList.get(i);
+
+		AttachmentDTO tempFileInfo = new AttachmentDTO();
+		tempFileInfo.setOriginalName(file.get("originFileName"));
+		tempFileInfo.setSavedName(file.get("savedFileName"));
+		tempFileInfo.setSavePath(file.get("savePath"));
+		tempFileInfo.setThumbnailPath(file.get("thumbnailPath"));
+		tempFileInfo.setModifyPerson(modifiedPerson);
+		tempFileInfo.setRefProductNo(productId);
+
+		list.add(tempFileInfo);
+	} -->
+	
+	
+	<!-- <update id="updateAttachment">
+		UPDATE ATTACHMENT
+		SET ORIGINAL_NAME=#{ name },
+		SAVED_NAME = #{ content },
+		SAVE_PATH = #{ price },
+		THUMBNAIL_PATH = #{ modifiedPerson },
+		MODIFIED_PERSON = #{ company.id },
+		WHERE ID=#{id}
+	</update> -->
+	
+	
+	
+	
+	
+	<!--	insert 추가 속성
+		useGenerateKeys : 생성 키 값을 만들기 위해 JDBC의 getGenerateKeys메소드를 호출할지 결정하며 기본값은 false이다. mysql - autoincreament, oracle - sequence
+		keyProperty : insert 구문의 하위 엘리먼트인 selectKey 엘리먼트에 의한 반환값을 설정할 프로퍼티를 지정.
+		keyColumn : 생성 키를 가진 테이블의 컬럼명을 설정한다. (키 컬럼이 테이블의 첫 번째 행이 아닌 데이터베이스에서만 필요하다 - PostgreSQL 제외)
+	 -->
+		<insert id="insertProduct" useGeneratedKeys="true" keyProperty="id">
+        INSERT /* company.id  주의 ProductDTO 내에 있는 CompanyDTO의 id 필드에서 가져오는것*/
+          INTO PRODUCT
+        (
+          NAME
+        , CONTENT
+        , PRICE
+        , COMPANY_ID
+        , CREATED_PERSON
+        )
+        VALUES 
+        (
+          #{ name }
+        , #{ content }
+        , #{ price }
+        , #{ company.id }
+        , #{ createdPerson }
+        )
+       
+	</insert>
+	
+	
+	<delete id="deleteProduct">
+		DELETE FROM PRODUCT
+		WHERE ID=#{id}
+	</delete>
+	
+	
+	<delete id="deleteAttachment">
+		DELETE FROM ATTACHMENT
+		WHERE REF_PRODUCT_NO=#{id}
+	</delete>
+	
+	
+	
+	<!-- <update id="updateCount" parameterType="_int">
+		UPDATE BOARD
+		SET COUNT = COUNT+1
+		WHERE NO=#{no}
+	</update> -->
+	
+	
+	
+	<!-- <select id="selectList" resultMap="productResultSet">
+		SELECT *
+		FROM PRODUCT 
+		ORDER BY id ASC
+	</select>
+	
+	<insert id="insertProduct">
+        INSERT /* com.multi.shop.product.model.dao.ProductDAO.insertProduct() */
+          INTO PRODUCT 
+         (
+        NAME,
+        CONTENT,
+        PRICE,
+        COMPANY_ID,
+        IMG,
+        CREATED_DATE,
+        CREATED_PERSON
+    )
+    VALUES
+    (
+        #{name},
+        #{content},
+        #{price},
+        #{companyId},
+        #{img},
+        NOW(),
+        #{createdPerson}
+    )
+	</insert>
+	
+	<select id="selectProduct" parameterType="_int" resultMap="productResultSet">
+		SELECT *
+		FROM PRODUCT
+		WHERE ID=${id}
+	</select>
+	 -->
+	
+
+</mapper>
